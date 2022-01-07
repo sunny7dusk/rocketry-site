@@ -1,4 +1,10 @@
 <p align="center">
+https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3/
+
+Btw, dont use npm for this project, use `yarn`
+</p>
+
+<p align="center">
   <h1>Vite + Vue + VueX + Vue Router + TailwindCss + JIT</h1>
 </p>
 
