@@ -1,9 +1,11 @@
 <script>
 import CardItem from "../components/CardItem.vue";
+import NavBar from "../components/NavButton.vue";
 
 export default {
   components: {
     CardItem,
+    NavBar,
   },
   data() {
     return {
@@ -28,12 +30,10 @@ export default {
 </script>
 
 <template>
+  <NavBar />
   <div class="w-full">
     <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" />
     <CardItem :title="'Rocketry'" :style="bgProcessed(bgTwo)" />
     <CardItem :title="'Rocketry'" :style="bgProcessed(bgThree)" />
   </div>
 </template>
-
-<style scoped>
-</style>
