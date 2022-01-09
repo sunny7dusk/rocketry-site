@@ -14,6 +14,7 @@ export default {
       descOne: `We are an organization dedicated to exploring and testing the limits\nof high-powered amateur rocketry and sharing that experience with the rest of Virginia Tech`,
       bgTwo: `../assets/RocketAsset2.png`,
       bgThree: `../assets/RocketAsset3.png`,
+      menuClicked: false,
     };
   },
   methods: {
@@ -25,15 +26,36 @@ export default {
         color: `white`,
       };
     },
+    menuButton() {
+      console.log("lol main home component");
+      this.menuClicked = !this.menuClicked;
+    },
   },
 };
 </script>
 
 <template>
-  <NavBar />
-  <div class="w-full">
-    <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" />
-    <CardItem :title="'Rocketry'" :style="bgProcessed(bgTwo)" />
-    <CardItem :title="'Rocketry'" :style="bgProcessed(bgThree)" />
+  <div class="body">
+    <NavBar @menu-clicked="menuButton" />
+    <div class="w-full" :style="[menuClicked?{height: '100vh', overflow: 'hidden'}:{}]">
+      <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" />
+      <CardItem :title="'Rocketry'" :style="bgProcessed(bgTwo)" />
+      <CardItem :title="'Rocketry'" :style="bgProcessed(bgThree)" />
+    </div>
   </div>
 </template>
+
+<style>
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+</style>
