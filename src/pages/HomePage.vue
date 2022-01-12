@@ -10,8 +10,8 @@ export default {
   data() {
     return {
       bgOne: `../assets/RocketAsset1.png`,
-      titleOne: `Rocketry at Virginia Tech`,
-      descOne: `We are an organization dedicated to exploring and testing the limits\nof high-powered amateur rocketry and sharing that experience with the rest of Virginia Tech`,
+      titleOne: `Rocketry@Virginia Tech`,
+      descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
       bgTwo: `../assets/RocketAsset2.png`,
       bgThree: `../assets/RocketAsset3.png`,
       menuClicked: false,
@@ -27,35 +27,35 @@ export default {
       };
     },
     menuButton() {
-      console.log("lol main home component");
+      // Switches boolean, if true then set not scrollable else scrollable
       this.menuClicked = !this.menuClicked;
+      if (!this.menuClicked)
+        document.getElementsByTagName("html")[0].style.overflowY = "auto";
+      else document.getElementsByTagName("html")[0].style.overflowY = "hidden";
     },
   },
 };
 </script>
 
 <template>
-  <div class="body">
+  <section class="body">
     <NavBar @menu-clicked="menuButton" />
-    <div class="w-full" :style="[menuClicked?{height: '100vh', overflow: 'hidden'}:{}]">
-      <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" />
+    <section class="w-full">
+      <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" :main="true" />
       <CardItem :title="'Rocketry'" :style="bgProcessed(bgTwo)" />
       <CardItem :title="'Rocketry'" :style="bgProcessed(bgThree)" />
-    </div>
-  </div>
+    </section>
+  </section>
 </template>
 
 <style>
 html {
-  overflow: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
-}
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: #ff0000;
 }
 </style>

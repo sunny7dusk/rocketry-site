@@ -13,31 +13,38 @@ export default {
       type: String,
       default: "I aint got nuthin",
     },
+    main: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    imageProcessed(image) {
+      const imgUrl = new URL(image, import.meta.url);
+      return imgUrl;
+    },
   },
 };
 </script>
 
 <template>
-  <div id="card" class="w-full h-screen bg-cover">
-    <h1 class="block pt-16">{{title}}</h1>
-    <p class="block">{{description}}</p>
-  </div>
+  <section id="card" class="w-full h-screen sm:bg-cover bg-center">
+    <div class="grid grid-cols-1 gap-8 pt-40 sm:pt-2">
+      <h1
+        :class="['block sm:pt-16 sm:ml-16 sm:mr-16 sm:text-8xl text-3xl '+[main?'font-bold':'font-light']]"
+      >{{title}}</h1>
+      <p class="block sm:ml-16 sm:mr-16 sm:text-2xl text-base">{{description}}</p>
+    </div>
+  </section>
 </template>
 
 <style scoped>
-/* #card {
+/* h1 {
+  font-size: 4vw;
 } */
 
-h1 {
-  font-size: 4vw;
-  margin-left: 4vw;
-  margin-right: 4vw;
-}
-
 p {
-  font-size: 1vw;
-  margin-left: 4vw;
-  margin-right: 4vw;
+  /* font-size: 1vw; */
   white-space: pre-wrap;
 }
 </style>

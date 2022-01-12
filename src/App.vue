@@ -3,10 +3,13 @@
 
 <template>
   <!-- Navbar here, router view will contain routes for the app-->
-  <div id="navbar">
+  <div id="routes">
     <router-view />
   </div>
 </template>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 </style>
