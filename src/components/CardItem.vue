@@ -29,9 +29,9 @@ export default {
 
 <template>
   <section id="card" class="w-full h-screen sm:bg-cover bg-center">
-    <div class="grid grid-cols-1 gap-8 sm:pt-2">
+    <div class="grid grid-cols-1 gap-8 pt-20">
       <h1
-        :class="['block sm:pt-16 sm:ml-16 sm:mr-16 sm:text-8xl text-3xl '+[main?'font-bold':'font-light']]"
+        :class="['block sm:pt-16 sm:ml-16 sm:mr-16 sm:text-8xl text-5xl '+[main?'font-bold':'font-light']]"
       >{{title}}</h1>
       <p class="block sm:ml-16 sm:mr-16 sm:text-2xl text-base">{{description}}</p>
     </div>
@@ -39,12 +39,15 @@ export default {
 </template>
 
 <style scoped>
-/* h1 {
-  font-size: 4vw;
-} */
+h1 {
+  margin-left: 4vw;
+  white-space: pre-wrap;
+}
 
 p {
   /* font-size: 1vw; */
   white-space: pre-wrap;
+  margin-left: 4vw;
+  margin-right: 4vw;
 }
 </style>

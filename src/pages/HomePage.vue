@@ -1,19 +1,23 @@
 <script>
 import CardItem from "../components/CardItem.vue";
-import NavBar from "../components/NavButton.vue";
 
 export default {
   components: {
     CardItem,
-    NavBar,
   },
   data() {
     return {
       bgOne: `../assets/RocketAsset1.png`,
-      titleOne: `Rocketry at Virginia Tech`,
+      titleOne: `Rocketry At \nVirginia Tech`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
+      titleTwo: "Who are We?",
       bgTwo: `../assets/RocketAsset2.png`,
+      descTwo:
+        "Made from many subteams, Rocketry at Virginia Tech is composed for engineers of many disciplines prototyping and creating towards our rocket for the Spaceport America Cup competition. ",
+      titleThree: "Benefactors",
       bgThree: `../assets/RocketAsset3.png`,
+      descThree:
+        "All the work that we do is possible because of the help we recieve from our sponsors! Thank you for being inspirations and making our goals possible! ",
       menuClicked: false,
     };
   },
@@ -21,7 +25,8 @@ export default {
     bgProcessed(image) {
       const imgUrl = new URL(image, import.meta.url);
       return {
-        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,1) 100%), url('${imgUrl}')`,
+        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,1) 100%), url('${imgUrl}')`,
+
         color: `white`,
       };
     },
@@ -42,17 +47,15 @@ export default {
 
 <template>
   <section class="body">
-    <NavBar @menu-clicked="menuButton" />
     <section class="w-full">
+      <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" :main="true" />
+      <CardItem :title="titleTwo" :style="bgProcessed(bgTwo)" :description="descTwo" :main="true" />
       <CardItem
-        :title="titleOne"
-        :style="bgProcessed(bgOne)"
-        :description="descOne"
+        :title="titleThree"
+        :style="bgProcessed(bgThree)"
+        :description="descThree"
         :main="true"
-        :image="bgOne"
       />
-      <CardItem :title="'Rocketry'" :style="bgProcessed(bgTwo)" />
-      <CardItem :title="'Rocketry'" :style="bgProcessed(bgThree)" />
     </section>
   </section>
 </template>
