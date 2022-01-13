@@ -13,12 +13,11 @@ export default {
       titleTwo: "Who are We?",
       bgTwo: `../assets/RocketAsset2.png`,
       descTwo:
-        "Made from many subteams, Rocketry at Virginia Tech is composed for engineers of many disciplines prototyping and creating towards our rocket for the Spaceport America Cup competition. ",
+        "Made from many subteams, Rocketry at Virginia Tech is \ncomposed for engineers of many disciplines prototyping \nand creating towards our rocket for the \nSpaceport America Cup competition. ",
       titleThree: "Benefactors",
       bgThree: `../assets/RocketAsset3.png`,
       descThree:
-        "All the work that we do is possible because of the help we recieve from our sponsors! Thank you for being inspirations and making our goals possible! ",
-      menuClicked: false,
+        "All the work that we do is possible because of the help we \nreceive from our sponsors! Thank you for being inspirations \nand making our goals possible! ",
     };
   },
   methods: {
@@ -66,7 +65,6 @@ html {
   overflow-x: hidden;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
   background-image: url("../assets/bg.svg");
-  background-attachment: fixed;
 }
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
