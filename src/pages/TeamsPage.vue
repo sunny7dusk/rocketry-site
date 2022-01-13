@@ -1,12 +1,10 @@
 <script>
 import CardItem from "../components/CardItem.vue";
-import NavBar from "../components/NavButton.vue";
 import TeamCard from "../components/TeamCard.vue";
 
 export default {
   components: {
     CardItem,
-    NavBar,
     TeamCard,
   },
   data() {
@@ -41,7 +39,6 @@ export default {
 
 <template>
   <section id="teamPage">
-    <NavBar @menu-clicked="menuButton" />
     <section id="teamPageContent">
       <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" />
       <section class="w-full grid grid-cols-1 sm:grid-cols-2 pt-16 justify-items-center gap-8">

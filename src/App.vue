@@ -47,31 +47,57 @@
               href="#"
               class="block py-2 pr-4 pl-3 text-white bg-red-800 rounded md:bg-transparent md:text-red-800 md:p-0 dark:text-white"
               aria-current="page"
-            >Home</a>
+            >
+              <router-link :to="'/'">Who Are We</router-link>
+            </a>
           </li>
           <li>
             <a
               href="#"
               class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-            >About</a>
+            >
+              <router-link :to="'/'">About Us</router-link>
+            </a>
           </li>
           <li>
             <a
               href="#"
               class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-            >Services</a>
+            >
+              <router-link :to="'/teams'">Leadership Team</router-link>
+            </a>
           </li>
           <li>
             <a
               href="#"
               class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-            >Pricing</a>
+            >
+              <router-link :to="'/'">Projects</router-link>
+            </a>
           </li>
           <li>
             <a
               href="#"
               class="block py-2 pr-4 pl-3 text-white hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-            >Contact</a>
+            >
+              <router-link :to="'/'">Updates</router-link>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block py-2 pr-4 pl-3 text-white hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              <router-link :to="'/'">Sponsors</router-link>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block py-2 pr-4 pl-3 text-white hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+            >
+              <router-link :to="'/'">Join Us</router-link>
+            </a>
           </li>
         </ul>
       </div>
