@@ -31,12 +31,12 @@ export default {
 
 <template>
   <div
-    class="fixed align-middle select-none text-yellow-50 transition ease-in-out w-full h-full bg-cover bg-no-repeat"
+    class="fixed align-middle select-none text-yellow-50 transition ease-in-out w-full h-full bg-cover bg-no-repeat pt-8 m-0"
     :style="[!collapse?menuStyle():{}]"
   >
     <div class="w-full flex-col justify-center items-center flex mix-blend-normal">
       <div
-        class="border-4 p-2 mr-8 text-center sm:w-24 w-16 hover:bg-black mt-16 relative self-end rounded-full"
+        class="border-4 p-2 mr-8 text-center sm:w-24 w-16 hover:bg-black relative self-end rounded-full"
         @click="expendMenu"
       >
         <button v-if="collapse" class="sm:text-4xl transition ease-in-out delay-75 relative z-50">
@@ -56,12 +56,14 @@ export default {
 
     <div
       v-if="!collapse"
-      class="p-2 text-center relative w-full grid-cols-2 justify-center content-center grid gap-x-8 gap-y-16 mt-8 bg-contain"
+      class="p-2 text-center fixed w-full grid-cols-2 justify-center content-center grid gap-x-8 gap-y-16 bg-contain z-50"
     >
       <button
         class="p-2 text-center hover:scale-110 rounded-full transition ease-in-out delay-75 sm:text-4xl"
         @click="expendMenu"
-      >Who We Are</button>
+      >
+        <router-link :to="'/'">Who Are We</router-link>
+      </button>
       <button
         class="p-2 text-center hover:scale-110 rounded-full transition ease-in-out delay-75 sm:text-4xl"
         @click="expendMenu"
@@ -69,7 +71,9 @@ export default {
       <button
         class="p-2 text-center hover:scale-110 rounded-full transition ease-in-out delay-75 sm:text-4xl"
         @click="expendMenu"
-      >Leadership Team</button>
+      >
+        <router-link :to="'/teams'">Leadership Team</router-link>
+      </button>
       <button
         class="p-2 text-center hover:scale-110 rounded-full transition ease-in-out delay-75 sm:text-4xl"
         @click="expendMenu"

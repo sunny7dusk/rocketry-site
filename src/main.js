@@ -10,11 +10,14 @@ import {
   faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import "@themesberg/flowbite";
+import Parallax from "vue-parallaxy";
 
 library.add(faUserSecret, faEllipsisH, faAngleLeft);
 
 createApp(App)
   .use(router)
   .use(store)
+  .use(Parallax)
   .component("FontAwesomeIcon", FontAwesomeIcon)
   .mount("#app");

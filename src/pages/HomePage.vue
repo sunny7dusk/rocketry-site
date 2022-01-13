@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       bgOne: `../assets/RocketAsset1.png`,
-      titleOne: `Rocketry@Virginia Tech`,
+      titleOne: `Rocketry at Virginia Tech`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
       bgTwo: `../assets/RocketAsset2.png`,
       bgThree: `../assets/RocketAsset3.png`,
@@ -22,9 +22,12 @@ export default {
       const imgUrl = new URL(image, import.meta.url);
       return {
         backgroundImage: `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,1) 100%), url('${imgUrl}')`,
-        paddingBottom: `33%`,
         color: `white`,
       };
+    },
+    imageProcessed(image) {
+      const imgUrl = new URL(image, import.meta.url);
+      return imgUrl;
     },
     menuButton() {
       // Switches boolean, if true then set not scrollable else scrollable
@@ -41,7 +44,13 @@ export default {
   <section class="body">
     <NavBar @menu-clicked="menuButton" />
     <section class="w-full">
-      <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" :main="true" />
+      <CardItem
+        :title="titleOne"
+        :style="bgProcessed(bgOne)"
+        :description="descOne"
+        :main="true"
+        :image="bgOne"
+      />
       <CardItem :title="'Rocketry'" :style="bgProcessed(bgTwo)" />
       <CardItem :title="'Rocketry'" :style="bgProcessed(bgThree)" />
     </section>
@@ -53,6 +62,8 @@ html {
   overflow-y: auto;
   overflow-x: hidden;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  background-image: url("../assets/bg.svg");
+  background-attachment: fixed;
 }
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
