@@ -1,9 +1,11 @@
 <script>
 import CardItem from "../components/CardItem.vue";
+import NavBar from "../components/NavButton.vue";
 
 export default {
   components: {
     CardItem,
+    NavBar,
   },
   data() {
     return {
@@ -12,12 +14,10 @@ export default {
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
       titleTwo: "Who are We?",
       bgTwo: `../assets/RocketAsset2.png`,
-      descTwo:
-        "Made from many subteams, Rocketry at Virginia Tech is \ncomposed for engineers of many disciplines prototyping \nand creating towards our rocket for the \nSpaceport America Cup competition. ",
+      descTwo: `Made from many subteams, Rocketry at Virginia Tech\n is composed for engineers of many disciplines \n prototyping and creating towards our rocket\n for the Spaceport America Cup competition. `,
       titleThree: "Benefactors",
       bgThree: `../assets/RocketAsset3.png`,
-      descThree:
-        "All the work that we do is possible because of the help we \nreceive from our sponsors! Thank you for being inspirations \nand making our goals possible! ",
+      descThree: `All the work that we do is possible because of the help we \n recieve from our sponsors! Thank you for being inspirations \n and making our goals possible! `,
     };
   },
   methods: {
@@ -28,11 +28,11 @@ export default {
           main ? "transparent" : "#18181b"
         } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
         color: `white`,
+        backgroundSize: `fill`,
+        backgroundRepeat: "no-repeat",
+        width: `100vw`,
+        height: "100vh",
       };
-    },
-    imageProcessed(image) {
-      const imgUrl = new URL(image, import.meta.url);
-      return imgUrl;
     },
     menuButton() {
       // Switches boolean, if true then set not scrollable else scrollable
@@ -47,6 +47,7 @@ export default {
 
 <template>
   <section class="body">
+    <NavBar @menu-clicked="menuButton" />
     <section class="w-full">
       <CardItem
         :title="titleOne"
@@ -54,8 +55,13 @@ export default {
         :description="descOne"
         :main="true"
       />
-      <CardItem :title="titleTwo" :style="bgProcessed(bgTwo)" :description="descTwo" />
-      <CardItem :title="titleThree" :style="bgProcessed(bgThree)" :description="descThree" />
+      <CardItem :title="titleTwo" :style="bgProcessed(bgTwo)" :description="descTwo" :main="true" />
+      <CardItem
+        :title="titleThree"
+        :style="bgProcessed(bgThree)"
+        :description="descThree"
+        :main="true"
+      />
     </section>
   </section>
 </template>
@@ -65,7 +71,6 @@ html {
   overflow-y: auto;
   overflow-x: hidden;
   text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
-  background-image: url("../assets/bg.svg");
 }
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */

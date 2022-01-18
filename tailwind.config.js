@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         zinc: "#18181b",
         maroon: "#861f41",
+        "regal-blue": "#243c5a",
       },
     },
     fontFamily: {

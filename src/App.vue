@@ -85,7 +85,7 @@ export default {
               :class="['block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white hover:scale-110 ease-in-out duration-300 ' + [tabs[3]&&'bg-maroon md:text-maroon']]"
               @click="highlighted(3)"
             >
-              <router-link :to="'/'">Projects</router-link>
+              <router-link :to="'/projects'">Projects</router-link>
             </a>
           </li>
           <li>
@@ -124,5 +124,6 @@ export default {
 <style>
 html {
   scroll-behavior: smooth;
+  background-image: url("/bg.svg");
 }
 </style>
