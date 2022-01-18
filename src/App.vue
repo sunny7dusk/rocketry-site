@@ -1,100 +1,113 @@
-<script setup>
+<script>
+export default {
+  data() {
+    return {
+      collapse: true,
+      loadApp: false,
+      logoImg: "/logo2.png",
+      // whoAreWe,aboutUs,team,projects,updates,sponsors,join
+      tabs: [true, false, false, false, false, false, false],
+    };
+  },
+  created() {
+    document.onreadystatechange = () => {
+      //To load the app only after all libraries are loaded
+      console.log(`loadApp is now ${this.loadApp}`);
+      if (document.readyState == "complete") {
+        this.loadApp = true;
+      }
+    };
+  },
+  methods: {
+    highlighted(index) {
+      this.setAllOff();
+      this.tabs[index] = true;
+    },
+    setAllOff() {
+      for (let i = 0; i < this.tabs.length; i++) this.tabs[i] = false;
+    },
+  },
+};
 </script>
 
 <template>
-  <nav class="bg-black border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800">
+  <nav class="px-2 sm:px-4 py-2.5 bg-zinc">
     <div class="container flex flex-wrap justify-between items-center mx-auto">
       <a href="#" class="flex">
-        <img src="../public/testLogo.png" width="70" height="70" />
+        <router-link :to="'/'">
+          <img :src="logoImg" width="70" height="70" />
+        </router-link>
       </a>
       <button
         data-collapse-toggle="mobile-menu"
         type="button"
-        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-        aria-controls="mobile-menu-2"
+        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="mobile-menu"
         aria-expanded="false"
+        @click="collapse = !collapse"
       >
         <span class="sr-only">Open main menu</span>
-        <svg
-          class="w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        <svg
-          class="hidden w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"
-          />
-        </svg>
+        <button v-if="collapse" class="text-2xl transition ease-in-out delay-75 relative z-50">
+          <FontAwesomeIcon :icon="['fas', 'ellipsis-h']" />
+        </button>
+        <button v-else class="text-2xl transition ease-in-out delay-75 relative z-50">
+          <FontAwesomeIcon :icon="['fas', 'angle-left']" />
+        </button>
       </button>
       <div id="mobile-menu" class="hidden w-full md:block md:w-auto">
         <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
           <li>
             <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white bg-red-800 rounded md:bg-transparent md:text-red-800 md:p-0 dark:text-white"
-              aria-current="page"
+              :class="['block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white hover:scale-110 ease-in-out duration-300 ' + [tabs[0]&&'bg-maroon md:text-maroon']]"
+              @click="highlighted(0)"
             >
               <router-link :to="'/'">Who Are We</router-link>
             </a>
           </li>
           <li>
             <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              :class="['block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white hover:scale-110 ease-in-out duration-300 ' + [tabs[1]&&'bg-maroon md:text-maroon']]"
+              @click="highlighted(1)"
             >
               <router-link :to="'/'">About Us</router-link>
             </a>
           </li>
           <li>
             <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              :class="['block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white hover:scale-110 ease-in-out duration-300 ' + [tabs[2]&&'bg-maroon md:text-maroon']]"
+              @click="highlighted(2)"
             >
               <router-link :to="'/teams'">Leadership Team</router-link>
             </a>
           </li>
           <li>
             <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              :class="['block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white hover:scale-110 ease-in-out duration-300 ' + [tabs[3]&&'bg-maroon md:text-maroon']]"
+              @click="highlighted(3)"
             >
               <router-link :to="'/'">Projects</router-link>
             </a>
           </li>
           <li>
             <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              :class="['block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white hover:scale-110 ease-in-out duration-300 ' + [tabs[4]&&'bg-maroon md:text-maroon']]"
+              @click="highlighted(4)"
             >
               <router-link :to="'/'">Updates</router-link>
             </a>
           </li>
           <li>
             <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              :class="['block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white hover:scale-110 ease-in-out duration-300 ' + [tabs[5]&&'bg-maroon md:text-maroon']]"
+              @click="highlighted(5)"
             >
               <router-link :to="'/'">Sponsors</router-link>
             </a>
           </li>
           <li>
             <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              :class="['block py-2 pr-4 pl-3 text-white  rounded md:bg-transparent  md:p-0 dark:text-white hover:scale-110 ease-in-out duration-300 ' + [tabs[6]&&'bg-maroon md:text-maroon']]"
+              @click="highlighted(6)"
             >
               <router-link :to="'/'">Join Us</router-link>
             </a>
@@ -103,84 +116,9 @@
       </div>
     </div>
   </nav>
-  <div id="routes">
+  <div v-if="loadApp" id="routes">
     <router-view />
   </div>
-  <nav class="bg-black border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800">
-    <div class="container flex flex-wrap justify-between items-center mx-auto">
-      <a href="#" class="flex">
-        <img src="../public/testLogo.png" width="70" height="70" />
-      </a>
-      <button
-        data-collapse-toggle="mobile-menu"
-        type="button"
-        class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-        aria-controls="mobile-menu-2"
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open main menu</span>
-        <svg
-          class="w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        <svg
-          class="hidden w-6 h-6"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </button>
-      <div id="mobile-menu" class="hidden w-full md:block md:w-auto">
-        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-          <li>
-            <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white bg-red-800 rounded md:bg-transparent md:text-red-800 md:p-0 dark:text-white"
-              aria-current="page"
-            >Home</a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-            >About</a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-            >Services</a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-            >Pricing</a>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="block py-2 pr-4 pl-3 text-white hover:bg-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-red-800 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-            >Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 </template>
 
 <style>

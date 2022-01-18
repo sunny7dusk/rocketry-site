@@ -12,6 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import "@themesberg/flowbite";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 library.add(faUserSecret, faEllipsisH, faAngleLeft);
 

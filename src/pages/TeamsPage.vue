@@ -15,10 +15,12 @@ export default {
     };
   },
   methods: {
-    bgProcessed(image) {
+    bgProcessed(image, main) {
       const imgUrl = new URL(image, import.meta.url);
       return {
-        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,1) 100%), url('${imgUrl}')`,
+        backgroundImage: `linear-gradient(180deg, ${
+          main ? "transparent" : "#18181b"
+        } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
         color: `white`,
       };
     },
@@ -40,8 +42,8 @@ export default {
 <template>
   <section id="teamPage">
     <section id="teamPageContent">
-      <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" />
-      <section class="w-full grid grid-cols-1 sm:grid-cols-2 pt-16 justify-items-center gap-8">
+      <CardItem :title="titleOne" :style="bgProcessed(bgOne, true)" :description="descOne" />
+      <section class="w-full grid grid-cols-1 sm:grid-cols-2 pt-16 justify-items-center gap-8 p-4">
         <TeamCard
           :name="'Hanna Kruse'"
           :image="'../assets/people/hannaKruse.jpg'"
@@ -53,7 +55,9 @@ export default {
           :role="'Team Captain'"
         />
       </section>
-      <section class="w-full grid grid-cols-2 sm:grid-cols-3 pt-8 justify-items-center gap-16">
+      <section
+        class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pt-8 justify-items-center gap-8 p-4"
+      >
         <TeamCard
           :name="'Michael Punaro'"
           :image="'../assets/people/michaelPunaro.png'"
@@ -75,7 +79,7 @@ export default {
           :role="'Propulsion'"
         />
         <TeamCard
-          :name="'Payload'"
+          :name="'Neha Chinthapatla'"
           :image="'../assets/people/nehaChinthapatla.jpg'"
           :role="'Payload'"
         />

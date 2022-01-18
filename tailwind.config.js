@@ -3,7 +3,12 @@ module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        zinc: "#18181b",
+        maroon: "#861f41",
+      },
+    },
     fontFamily: {
       sans: ["Bahnschrift"],
     },

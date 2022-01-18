@@ -29,12 +29,18 @@ export default {
 
 <template>
   <section>
-    <div class="relative max-w-xs rounded-lg drop-shadow-md card -z-10">
+    <div
+      class="relative max-w-[16rem] md:max-w-xs rounded-lg drop-shadow-md card z-10 backdrop-blur-xl"
+      data-aos="fade-down"
+      data-aos-duration="700"
+      data-aos-easing="ease-in-out"
+      data-aos-once="true"
+    >
       <img class="relative rounded-t-lg" :src="[imageProcessed(image)]" alt="people" />
       <div class="p-5">
         <h5 class="mb-2 text-2xl font-bold text-yellow-50">{{name}}</h5>
-        <p class="mb-3 font-normal text-yellow-50">{{role}}</p>
-        <p v-if="description.length>0" class="mb-3 font-normal text-yellow-50">{{description}}</p>
+        <p class="mb-3 font-normal text-white">{{role}}</p>
+        <p v-if="description.length>0" class="mb-3 font-normal text-white">{{description}}</p>
       </div>
     </div>
   </section>
@@ -42,10 +48,7 @@ export default {
 
 <style scoped>
 .card {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+  background: inherit;
 }
 </style>

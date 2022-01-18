@@ -21,11 +21,12 @@ export default {
     };
   },
   methods: {
-    bgProcessed(image) {
+    bgProcessed(image, main) {
       const imgUrl = new URL(image, import.meta.url);
       return {
-        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,1) 100%), url('${imgUrl}')`,
-
+        backgroundImage: `linear-gradient(180deg, ${
+          main ? "transparent" : "#18181b"
+        } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
         color: `white`,
       };
     },
@@ -47,14 +48,14 @@ export default {
 <template>
   <section class="body">
     <section class="w-full">
-      <CardItem :title="titleOne" :style="bgProcessed(bgOne)" :description="descOne" :main="true" />
-      <CardItem :title="titleTwo" :style="bgProcessed(bgTwo)" :description="descTwo" :main="true" />
       <CardItem
-        :title="titleThree"
-        :style="bgProcessed(bgThree)"
-        :description="descThree"
+        :title="titleOne"
+        :style="bgProcessed(bgOne, true)"
+        :description="descOne"
         :main="true"
       />
+      <CardItem :title="titleTwo" :style="bgProcessed(bgTwo)" :description="descTwo" />
+      <CardItem :title="titleThree" :style="bgProcessed(bgThree)" :description="descThree" />
     </section>
   </section>
 </template>
