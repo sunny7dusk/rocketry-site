@@ -20,6 +20,9 @@ export default {
       return {
         backgroundImage: `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,1) 100%), url('${imgUrl}')`,
         color: `white`,
+        backgroundRepeat: "no-repeat",
+        width: `100vw`,
+        height: "100vh",
       };
     },
     imageProcessed(image) {

@@ -22,7 +22,7 @@ export default {
           main ? "transparent" : "#18181b"
         } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
         color: `white`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
       };
     },
     imageProcessed(image) {

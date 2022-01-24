@@ -1,11 +1,9 @@
 <script>
 import CardItem from "../components/CardItem.vue";
-import NavBar from "../components/NavButton.vue";
 
 export default {
   components: {
     CardItem,
-    NavBar,
   },
   data() {
     return {
@@ -28,7 +26,7 @@ export default {
           main ? "transparent" : "#18181b"
         } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
         color: `white`,
-        backgroundSize: `fill`,
+        backgroundSize: `cover`,
         backgroundRepeat: "no-repeat",
         width: `100vw`,
         height: "100vh",
@@ -47,7 +45,6 @@ export default {
 
 <template>
   <section class="body">
-    <NavBar @menu-clicked="menuButton" />
     <section class="w-full">
       <CardItem
         :title="titleOne"

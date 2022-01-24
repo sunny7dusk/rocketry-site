@@ -29,7 +29,7 @@ export default {
 
 <template>
   <div
-    class="relative drop-shadow-md"
+    class="relative drop-shadow-md bg-cover bg-no-repeat"
     data-aos="fade-up"
     data-aos-duration="500"
     data-aos-easing="ease-in-out"
