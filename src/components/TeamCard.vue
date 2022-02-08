@@ -39,7 +39,7 @@ export default {
       <img class="relative rounded-t-lg" :src="[imageProcessed(image)]" alt="people" />
       <div class="p-5">
         <h5 class="mb-2 text-2xl font-bold text-yellow-50">{{name}}</h5>
-        <p class="mb-3 font-normal text-white">{{role}}</p>
+        <p v-if="role.length>0" class="mb-3 font-normal text-white">{{role}}</p>
         <p v-if="description.length>0" class="mb-3 font-normal text-white">{{description}}</p>
       </div>
     </div>

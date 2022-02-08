@@ -2,7 +2,7 @@
   "name": "vite-vue-tailwind-jit",
   "version": "0.0.0",
   "scripts": {
-    "dev": "TAILWIND_MODE=watch vite dev",
+    "dev": "vite dev",
     "build": "vite build",
     "serve": "vite preview"
   },

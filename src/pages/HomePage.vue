@@ -18,6 +18,9 @@ export default {
       descThree: `All the work that we do is possible because of the help we \n recieve from our sponsors! Thank you for being inspirations \n and making our goals possible! `,
     };
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     bgProcessed(image, main) {
       const imgUrl = new URL(image, import.meta.url);

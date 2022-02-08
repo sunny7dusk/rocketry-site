@@ -14,6 +14,9 @@ export default {
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
     };
   },
+  mounted() {
+    window.scrollTo(0, 0);
+  },
   methods: {
     bgProcessed(image) {
       const imgUrl = new URL(image, import.meta.url);

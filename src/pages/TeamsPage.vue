@@ -10,9 +10,12 @@ export default {
   data() {
     return {
       bgOne: `../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg`,
-      titleOne: `Leadership Teams`,
+      titleOne: `Teams`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
     };
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
   methods: {
     bgProcessed(image, main) {
@@ -44,61 +47,70 @@ export default {
   <section id="teamPage">
     <section id="teamPageContent">
       <CardItem :title="titleOne" :style="bgProcessed(bgOne, true)" :description="descOne" />
-      <section class="w-full grid grid-cols-1 sm:grid-cols-2 pt-16 justify-items-center gap-8 p-4">
-        <TeamCard
-          :name="'Hanna Kruse'"
-          :image="'../assets/people/hannaKruse.jpg'"
-          :role="'Team Captain'"
-        />
-        <TeamCard
-          :name="'Zachary Hoelscher'"
-          :image="'../assets/people/zacharyHoelscher.png'"
-          :role="'Team Captain'"
-        />
-      </section>
-      <section
-        class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pt-8 justify-items-center gap-8 p-4"
-      >
-        <TeamCard
-          :name="'Michael Punaro'"
-          :image="'../assets/people/michaelPunaro.png'"
-          :role="'Avionics'"
-        />
-        <TeamCard
-          :name="'Jack Griggs'"
-          :image="'../assets/people/jackGriggs.png'"
-          :role="'Aerostructures'"
-        />
-        <TeamCard
-          :name="'Gabe Mills'"
-          :image="'../assets/people/gabeMills.png'"
-          :role="'Recovery'"
-        />
-        <TeamCard
-          :name="'Ben Piper'"
-          :image="'../assets/people/benPiper.png'"
-          :role="'Propulsion'"
-        />
-        <TeamCard
-          :name="'Neha Chinthapatla'"
-          :image="'../assets/people/nehaChinthapatla.jpg'"
-          :role="'Payload'"
-        />
-        <TeamCard
-          :name="'Carmen White'"
-          :image="'../assets/people/carmenWhite.jpg'"
-          :role="'Business & PR'"
-        />
-        <TeamCard
-          :name="'Binay Rijal'"
-          :image="'../assets/people/binayRijal.jpg'"
-          :role="'Software'"
-        />
-        <TeamCard
-          :name="'Griffin Burd'"
-          :image="'../assets/people/griffinBurd.png'"
-          :role="'Design Validation'"
-        />
+      <section class="w-full grid grid-cols-1 sm:grid-cols-2 pt-16 justify-items-center gap-8 p-16">
+        <router-link to="/aerostructures">
+          <TeamCard
+            :name="'Aerostructures'"
+            :image="'../assets/aerostructures/logo.png'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
+        <router-link to="/avionics">
+          <TeamCard
+            :name="'Avionics'"
+            :image="'../assets/avionics/logo.gif'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
+        <router-link to="/businessandpr">
+          <TeamCard
+            :name="'Business & PR'"
+            :image="'../assets/businessandpr/logo.jpg'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
+        <router-link to="/designvalidation">
+          <TeamCard
+            :name="'Design Validation'"
+            :image="'../assets/designvalidation/logo.png'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
+        <router-link to="/leadership">
+          <TeamCard
+            :name="'Leadership'"
+            :image="'../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
+        <router-link to="/payload">
+          <TeamCard
+            :name="'Payload'"
+            :image="'../assets/payload/logo2.jpg'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
+        <router-link to="/propulsion">
+          <TeamCard
+            :name="'Propulsion'"
+            :image="'../assets/propulsion/logo.png'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
+        <router-link to="/recovery">
+          <TeamCard
+            :name="'Recovery'"
+            :image="'../assets/recovery/logo.png'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
+        <router-link to="/software">
+          <TeamCard
+            :name="'Software'"
+            :image="'../assets/software/logo.png'"
+            class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
+          />
+        </router-link>
       </section>
     </section>
   </section>
