@@ -1,5 +1,8 @@
 <script>
 import CardItem from "../components/CardItem.vue";
+import bgOne from "../assets/RocketAsset1.png";
+import bgTwo from "../assets/RocketAsset2.png";
+import bgThree from "../assets/RocketAsset3.png";
 
 export default {
   components: {
@@ -7,14 +10,14 @@ export default {
   },
   data() {
     return {
-      bgOne: `../assets/RocketAsset1.png`,
+      bgOne: bgOne,
       titleOne: `Rocketry At \nVirginia Tech`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
       titleTwo: "Who are We?",
-      bgTwo: `../assets/RocketAsset2.png`,
+      bgTwo: bgTwo,
       descTwo: `Made from many subteams, Rocketry at Virginia Tech\n is composed for engineers of many disciplines \n prototyping and creating towards our rocket\n for the Spaceport America Cup competition. `,
       titleThree: "Benefactors",
-      bgThree: `../assets/RocketAsset3.png`,
+      bgThree: bgThree,
       descThree: `All the work that we do is possible because of the help we \n recieve from our sponsors! Thank you for being inspirations \n and making our goals possible! `,
     };
   },
@@ -22,25 +25,37 @@ export default {
     window.scrollTo(0, 0);
   },
   methods: {
-    bgProcessed(image, main) {
-      const imgUrl = new URL(image, import.meta.url);
-      return {
-        backgroundImage: `linear-gradient(180deg, ${
-          main ? "transparent" : "#18181b"
-        } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
-        color: `white`,
-        backgroundSize: `cover`,
-        backgroundRepeat: "no-repeat",
-        width: `100vw`,
-        height: "100vh",
-      };
-    },
+    // bgTemp(image, main) {
+    //   const imgUrl = new URL(image, import.meta.url);
+    //   return {
+    //     backgroundImage: `linear-gradient(180deg, ${
+    //       main ? "transparent" : "#18181b"
+    //     } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
+    //     color: `white`,
+    //     backgroundSize: `cover`,
+    //     backgroundRepeat: "no-repeat",
+    //     width: `100vw`,
+    //     height: "100vh",
+    //   };
+    // },
     menuButton() {
       // Switches boolean, if true then set not scrollable else scrollable
       this.menuClicked = !this.menuClicked;
       if (!this.menuClicked)
         document.getElementsByTagName("html")[0].style.overflowY = "auto";
       else document.getElementsByTagName("html")[0].style.overflowY = "hidden";
+    },
+    bgProcessed(image, main) {
+      return {
+        backgroundImage: `linear-gradient(180deg, ${
+          main ? "transparent" : "#18181b"
+        } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${image}')`,
+        color: `white`,
+        backgroundSize: `cover`,
+        backgroundRepeat: "no-repeat",
+        width: `100vw`,
+        height: "100vh",
+      };
     },
   },
 };

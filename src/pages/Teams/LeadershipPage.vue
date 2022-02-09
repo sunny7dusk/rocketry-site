@@ -1,6 +1,7 @@
 <script>
 import CardItem from "../../components/CardItem.vue";
 import TeamCard from "../../components/TeamCard.vue";
+import bgOne from "../../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg";
 
 export default {
   components: {
@@ -9,7 +10,7 @@ export default {
   },
   data() {
     return {
-      bgOne: `../../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg`,
+      bgOne: bgOne,
       titleOne: `Leadership`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
     };

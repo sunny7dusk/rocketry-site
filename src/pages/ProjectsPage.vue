@@ -1,6 +1,7 @@
 <script>
 import CardItem from "../components/CardItem.vue";
 import TeamCard from "../components/TeamCard.vue";
+import bgOne from "../assets/Projects.png";
 
 export default {
   components: {
@@ -9,7 +10,7 @@ export default {
   },
   data() {
     return {
-      bgOne: `../assets/Projects.png`,
+      bgOne: bgOne,
       titleOne: `Projects`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
     };
@@ -19,9 +20,8 @@ export default {
   },
   methods: {
     bgProcessed(image) {
-      const imgUrl = new URL(image, import.meta.url);
       return {
-        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,1) 100%), url('${imgUrl}')`,
+        backgroundImage: `linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 50%, rgba(0,0,0,1) 100%), url('${image}')`,
         color: `white`,
         backgroundRepeat: "no-repeat",
         width: `100vw`,

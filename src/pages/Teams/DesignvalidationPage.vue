@@ -1,6 +1,7 @@
 <script>
 import CardItem from "../../components/CardItem.vue";
 import TeamCard from "../../components/TeamCard.vue";
+import bgOne from "../../assets/designvalidation/logo.png";
 
 export default {
   components: {
@@ -9,7 +10,7 @@ export default {
   },
   data() {
     return {
-      bgOne: `../../assets/designvalidation/logo.png`,
+      bgOne: bgOne,
       titleOne: `Design Validation`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
     };
@@ -19,11 +20,10 @@ export default {
   },
   methods: {
     bgProcessed(image, main) {
-      const imgUrl = new URL(image, import.meta.url);
       return {
         backgroundImage: `linear-gradient(180deg, ${
           main ? "transparent" : "#18181b"
-        } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
+        } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${image}')`,
         color: `white`,
         backgroundSize: "cover",
       };

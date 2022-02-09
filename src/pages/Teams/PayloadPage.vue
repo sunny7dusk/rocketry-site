@@ -1,6 +1,7 @@
 <script>
 import CardItem from "../../components/CardItem.vue";
 import TeamCard from "../../components/TeamCard.vue";
+import bgOne from "../../assets/payload/logo2.jpg";
 
 export default {
   components: {
@@ -9,7 +10,7 @@ export default {
   },
   data() {
     return {
-      bgOne: `../../assets/payload/logo2.jpg`,
+      bgOne: bgOne,
       titleOne: `Payload`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
     };
