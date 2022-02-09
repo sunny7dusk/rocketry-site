@@ -20,11 +20,10 @@ export default {
   },
   methods: {
     bgProcessed(image, main) {
-      const imgUrl = new URL(image, import.meta.url);
       return {
         backgroundImage: `linear-gradient(180deg, ${
           main ? "transparent" : "#18181b"
-        } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${imgUrl}')`,
+        } 0%, rgba(0,0,0,0.1) 50%, #18181b 100%), url('${image}')`,
         color: `white`,
         backgroundSize: "cover",
       };

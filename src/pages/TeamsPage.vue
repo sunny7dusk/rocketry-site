@@ -2,6 +2,15 @@
 import CardItem from "../components/CardItem.vue";
 import TeamCard from "../components/TeamCard.vue";
 import bgOne from "../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg";
+import aerostructures from "../assets/aerostructures/logo.png";
+import avionics from "../assets/avionics/logo.gif";
+import businessandpr from "../assets/businessandpr/logo.jpg";
+import designvalidation from "../assets/designvalidation/logo.png";
+import leadership from "../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg";
+import payload from "../assets/payload/logo2.jpg";
+import propulsion from "../assets/propulsion/logo.png";
+import recovery from "../assets/recovery/logo.png";
+import software from "../assets/software/logo.png";
 
 export default {
   components: {
@@ -13,6 +22,15 @@ export default {
       bgOne: bgOne,
       titleOne: `Teams`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
+      aerostructures: aerostructures,
+      avionics: avionics,
+      businessandpr: businessandpr,
+      designvalidation: designvalidation,
+      leadership: leadership,
+      payload: payload,
+      propulsion: propulsion,
+      recovery: recovery,
+      software: software,
     };
   },
   mounted() {
@@ -51,63 +69,63 @@ export default {
         <router-link to="/aerostructures">
           <TeamCard
             :name="'Aerostructures'"
-            :image="'../assets/aerostructures/logo.png'"
+            :image="aerostructures"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
         <router-link to="/avionics">
           <TeamCard
             :name="'Avionics'"
-            :image="'../assets/avionics/logo.gif'"
+            :image="avionics"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
         <router-link to="/businessandpr">
           <TeamCard
             :name="'Business & PR'"
-            :image="'../assets/businessandpr/logo.jpg'"
+            :image="businessandpr"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
         <router-link to="/designvalidation">
           <TeamCard
             :name="'Design Validation'"
-            :image="'../assets/designvalidation/logo.png'"
+            :image="designvalidation"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
         <router-link to="/leadership">
           <TeamCard
             :name="'Leadership'"
-            :image="'../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg'"
+            :image="leadership"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
         <router-link to="/payload">
           <TeamCard
             :name="'Payload'"
-            :image="'../assets/payload/logo2.jpg'"
+            :image="payload"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
         <router-link to="/propulsion">
           <TeamCard
             :name="'Propulsion'"
-            :image="'../assets/propulsion/logo.png'"
+            :image="propulsion"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
         <router-link to="/recovery">
           <TeamCard
             :name="'Recovery'"
-            :image="'../assets/recovery/logo.png'"
+            :image="recovery"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
         <router-link to="/software">
           <TeamCard
             :name="'Software'"
-            :image="'../assets/software/logo.png'"
+            :image="software"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>

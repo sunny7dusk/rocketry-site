@@ -2,6 +2,16 @@
 import CardItem from "../../components/CardItem.vue";
 import TeamCard from "../../components/TeamCard.vue";
 import bgOne from "../../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg";
+import hanna from "../../assets/people/hannaKruse.jpg";
+import zachary from "../../assets/people/zacharyHoelscher.png";
+import michael from "../../assets/people/michaelPunaro.png";
+import jack from "../../assets/people/jackGriggs.png";
+import gabe from "../../assets/people/gabeMills.png";
+import ben from "../../assets/people/benPiper.png";
+import neha from "../../assets/people/nehaChinthapatla.jpg";
+import carmen from "../../assets/people/carmenWhite.jpg";
+import binay from "../../assets/people/binayRijal.jpg";
+import griffin from "../../assets/people/griffinBurd.png";
 
 export default {
   components: {
@@ -13,6 +23,16 @@ export default {
       bgOne: bgOne,
       titleOne: `Leadership`,
       descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
+      hanna: hanna,
+      zachary: zachary,
+      michael: michael,
+      jack: jack,
+      gabe: gabe,
+      ben: ben,
+      neha: neha,
+      carmen: carmen,
+      binay: binay,
+      griffin: griffin,
     };
   },
   mounted() {
@@ -49,60 +69,20 @@ export default {
     <section id="teamPageContent">
       <CardItem :title="titleOne" :style="bgProcessed(bgOne, true)" :description="descOne" />
       <section class="w-full grid grid-cols-1 sm:grid-cols-2 pt-16 justify-items-center gap-8 p-4">
-        <TeamCard
-          :name="'Hanna Kruse'"
-          :image="'../assets/people/hannaKruse.jpg'"
-          :role="'Team Captain'"
-        />
-        <TeamCard
-          :name="'Zachary Hoelscher'"
-          :image="'../assets/people/zacharyHoelscher.png'"
-          :role="'Team Captain'"
-        />
+        <TeamCard :name="'Hanna Kruse'" :image="hanna" :role="'Team Captain'" />
+        <TeamCard :name="'Zachary Hoelscher'" :image="zachary" :role="'Team Captain'" />
       </section>
       <section
         class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 pt-8 justify-items-center gap-8 p-4"
       >
-        <TeamCard
-          :name="'Michael Punaro'"
-          :image="'../assets/people/michaelPunaro.png'"
-          :role="'Avionics'"
-        />
-        <TeamCard
-          :name="'Jack Griggs'"
-          :image="'../assets/people/jackGriggs.png'"
-          :role="'Aerostructures'"
-        />
-        <TeamCard
-          :name="'Gabe Mills'"
-          :image="'../assets/people/gabeMills.png'"
-          :role="'Recovery'"
-        />
-        <TeamCard
-          :name="'Ben Piper'"
-          :image="'../assets/people/benPiper.png'"
-          :role="'Propulsion'"
-        />
-        <TeamCard
-          :name="'Neha Chinthapatla'"
-          :image="'../assets/people/nehaChinthapatla.jpg'"
-          :role="'Payload'"
-        />
-        <TeamCard
-          :name="'Carmen White'"
-          :image="'../assets/people/carmenWhite.jpg'"
-          :role="'Business & PR'"
-        />
-        <TeamCard
-          :name="'Binay Rijal'"
-          :image="'../assets/people/binayRijal.jpg'"
-          :role="'Software'"
-        />
-        <TeamCard
-          :name="'Griffin Burd'"
-          :image="'../assets/people/griffinBurd.png'"
-          :role="'Design Validation'"
-        />
+        <TeamCard :name="'Michael Punaro'" :image="michael" :role="'Avionics'" />
+        <TeamCard :name="'Jack Griggs'" :image="jack" :role="'Aerostructures'" />
+        <TeamCard :name="'Gabe Mills'" :image="gabe" :role="'Recovery'" />
+        <TeamCard :name="'Ben Piper'" :image="ben" :role="'Propulsion'" />
+        <TeamCard :name="'Neha Chinthapatla'" :image="neha" :role="'Payload'" />
+        <TeamCard :name="'Carmen White'" :image="carmen" :role="'Business & PR'" />
+        <TeamCard :name="'Binay Rijal'" :image="binay" :role="'Software'" />
+        <TeamCard :name="'Griffin Burd'" :image="griffin" :role="'Design Validation'" />
       </section>
     </section>
   </section>
