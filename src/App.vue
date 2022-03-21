@@ -43,5 +43,7 @@ export default {
 html {
   scroll-behavior: smooth;
   background-image: url("/bg.svg");
+  overflow: hidden;
+  height: 100%;
 }
 </style>

@@ -1,16 +1,16 @@
 <script>
 import CardItem from "../components/CardItem.vue";
 import TeamCard from "../components/TeamCard.vue";
-import bgOne from "../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg";
-import aerostructures from "../assets/aerostructures/logo.png";
-import avionics from "../assets/avionics/logo.gif";
-import businessandpr from "../assets/businessandpr/logo.jpg";
-import designvalidation from "../assets/designvalidation/logo.png";
-import leadership from "../assets/20211016 - Homecoming Tailgate - By Peter Means-0199 (1).jpg";
-import payload from "../assets/payload/logo2.jpg";
-import propulsion from "../assets/propulsion/logo.png";
-import recovery from "../assets/recovery/logo.png";
-import software from "../assets/software/logo.png";
+import bgOne from "../assets/RocketAsset3.png";
+import aoeLogo from "../assets/White_Logos/AOE_LogoWhite.png";
+import leidosLogo from "../assets/White_Logos/LeidosTrans.png";
+import newtonLogo from "../assets/White_Logos/Newton_LogoWhite.png";
+import northropLogo from "../assets/White_Logos/NorthropGrumman_LogoWhite.png";
+import secLogo from "../assets/White_Logos/SEC_LogoWhite.png";
+import siemensLogo from "../assets/White_Logos/Siemens_LogoWhite.png";
+import solidworksLogo from "../assets/White_Logos/SOLIDWORKS_LogoWhite.png";
+import truesdellLogo from "../assets/White_Logos/Truesdell_LogoWhite.png";
+import vsgcLogo from "../assets/White_Logos/VSGC_LogoWhite.png";
 
 export default {
   components: {
@@ -20,17 +20,17 @@ export default {
   data() {
     return {
       bgOne: bgOne,
-      titleOne: `Teams`,
-      descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
-      aerostructures: aerostructures,
-      avionics: avionics,
-      businessandpr: businessandpr,
-      designvalidation: designvalidation,
-      leadership: leadership,
-      payload: payload,
-      propulsion: propulsion,
-      recovery: recovery,
-      software: software,
+      titleOne: `Sponsors`,
+      descOne: `We wouldn't be here without them. \nThank you for supporting Rocketry!`,
+      aoeLogo: aoeLogo,
+      leidosLogo: leidosLogo,
+      newtonLogo: newtonLogo,
+      northropLogo: northropLogo,
+      secLogo: secLogo,
+      siemensLogo: siemensLogo,
+      solidworksLogo: solidworksLogo,
+      truesdellLogo: truesdellLogo,
+      vsgcLogo: vsgcLogo,
     };
   },
   mounted() {
@@ -45,6 +45,10 @@ export default {
         color: `white`,
         backgroundSize: "cover",
       };
+    },
+    imageProcessed(image) {
+      const imgUrl = new URL(image, import.meta.url);
+      return `${imgUrl}`;
     },
     menuButton() {
       // Switches boolean, if true then set not scrollable else scrollable
@@ -61,67 +65,67 @@ export default {
   <section id="teamPage">
     <section id="teamPageContent">
       <CardItem :title="titleOne" :style="bgProcessed(bgOne, true)" :description="descOne" />
-      <section class="w-full grid grid-cols-1 sm:grid-cols-2 pt-16 justify-items-center gap-8 p-16">
-        <router-link to="/aerostructures">
+      <section class="w-full grid grid-cols-1 sm:grid-cols-2 pt-16 justify-items-center gap-4 p-16">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Aerostructures'"
-            :image="aerostructures"
+            :name="'Aerospace and Ocean Engineering Virginia Tech'"
+            :image="aoeLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
-        <router-link to="/avionics">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Avionics'"
-            :image="avionics"
+            :name="'VSGC'"
+            :image="vsgcLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
-        <router-link to="/businessandpr">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Business & PR'"
-            :image="businessandpr"
+            :name="'Newton'"
+            :image="newtonLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
-        <router-link to="/designvalidation">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Design Validation'"
-            :image="designvalidation"
+            :name="'Leidos Holdings'"
+            :image="leidosLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
-        <router-link to="/leadership">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Leadership'"
-            :image="leadership"
+            :name="'Northrop Grunmman'"
+            :image="northropLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
-        <router-link to="/payload">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Payload'"
-            :image="payload"
+            :name="'Student Engineering Council'"
+            :image="secLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
-        <router-link to="/propulsion">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Propulsion'"
-            :image="propulsion"
+            :name="'Siemens'"
+            :image="siemensLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
-        <router-link to="/recovery">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Recovery'"
-            :image="recovery"
+            :name="'SolidWorks'"
+            :image="solidworksLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>
-        <router-link to="/software">
+        <router-link to="/sponsors">
           <TeamCard
-            :name="'Software'"
-            :image="software"
+            :name="'Truesdell'"
+            :image="truesdellLogo"
             class="hover:scale-105 ease-in-out transition-all hover:bg-maroon rounded-lg"
           />
         </router-link>

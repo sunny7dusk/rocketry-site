@@ -11,7 +11,7 @@ export default {
     return {
       bgOne: bgOne,
       titleOne: `Business & PR`,
-      descOne: `We are an organization dedicated to exploring and testing \nthe limits of high-powered amateur rocketry and \nsharing that experience with the rest of Virginia Tech`,
+      descOne: `Don't ask us how rockets work! (jk)`,
     };
   },
   mounted() {
@@ -47,5 +47,6 @@ export default {
     <section id="teamPageContent">
       <CardItem :title="titleOne" :style="bgProcessed(bgOne, true)" :description="descOne" />
     </section>
+    <section></section>
   </section>
 </template>

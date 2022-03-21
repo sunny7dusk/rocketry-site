@@ -11,6 +11,7 @@ import Propulsion from "../pages/Teams/PropulsionPage.vue";
 import Recovery from "../pages/Teams/RecoveryPage.vue";
 import Software from "../pages/Teams/SoftwarePage.vue";
 import Projects from "../pages/ProjectsPage.vue";
+import Sponsors from "../pages/SponsorsPage.vue";
 
 const routes = [
   {
@@ -72,6 +73,11 @@ const routes = [
     path: "/projects",
     name: "Projects",
     component: Projects,
+  },
+  {
+    path: "/sponsors",
+    name: "Sponsors",
+    component: Sponsors,
   },
 ];
 const router = createRouter({

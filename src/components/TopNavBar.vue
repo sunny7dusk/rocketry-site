@@ -82,7 +82,7 @@ export default {
         },
         {
           title: "Sponsors",
-          route: "/",
+          route: "/sponsors",
           highlighted: false,
         },
         {
