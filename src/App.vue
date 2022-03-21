@@ -45,5 +45,7 @@ html {
   background-image: url("/bg.svg");
   overflow: hidden;
   height: 100%;
+  background-color: #18181b;
 }
+
 </style>
