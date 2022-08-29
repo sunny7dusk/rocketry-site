@@ -1,3 +1,6 @@
+# New repo for project is here
+# https://github.com/Decimate1405/Rocketry_Website
+
 <p align="center">
 https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3/
 
